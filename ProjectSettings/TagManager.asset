@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Target
+  - Wind
+  - Rina
+  - Garlic
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - LoadMask
+  - LoadBackGround
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3589454057
+    locked: 0
+  - name: Wind
+    uniqueID: 3455562327
+    locked: 0
+  - name: Character
+    uniqueID: 3139315015
+    locked: 0
+  - name: Garlic
+    uniqueID: 3401802051
+    locked: 0
