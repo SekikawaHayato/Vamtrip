@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
@@ -10,7 +8,10 @@ namespace Vampire.InGame
     {
         [SerializeField] Button _backHomeButton;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// クリア情報の更新
+        /// イベントの発行
+        /// </summary>
         void Start()
         {
             SaveDataManager.Instance.SaveSolvedSection();
@@ -21,12 +22,6 @@ namespace Vampire.InGame
                     SceneLoader.Instance.NextScene("Select");
                 })
                 .AddTo(this);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

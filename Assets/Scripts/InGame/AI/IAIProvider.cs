@@ -14,6 +14,7 @@ namespace Vampire.AI
         Vector3 Direction { get; }
         IReadOnlyReactiveProperty<string> CommentText { get; }
         IObservable<Unit> HitWind { get; }
+        IObservable<bool> HitGarlic { get; }
         IObservable<Unit> PutOn { get; }
         IObservable<Unit> Damage { get; }
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
@@ -12,7 +10,9 @@ namespace Vampire.InGame
         [SerializeField] Button _backHomeButton;
         bool _isSelected = false;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// イベントの発行
+        /// </summary>
         void Start()
         {
             _retryButton.onClick.AsObservable()
@@ -32,12 +32,6 @@ namespace Vampire.InGame
                     _isSelected = true;
                 })
                 .AddTo(this);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

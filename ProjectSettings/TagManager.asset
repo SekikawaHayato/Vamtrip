@@ -48,11 +48,11 @@ TagManager:
   - name: Background
     uniqueID: 3589454057
     locked: 0
-  - name: Wind
-    uniqueID: 3455562327
-    locked: 0
   - name: Character
     uniqueID: 3139315015
+    locked: 0
+  - name: Wind
+    uniqueID: 3455562327
     locked: 0
   - name: Garlic
     uniqueID: 3401802051

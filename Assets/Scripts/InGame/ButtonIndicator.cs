@@ -3,21 +3,24 @@ using UnityEngine.UI;
 
 public class ButtonIndicator : MonoBehaviour
 {
-    Image _image;
     Button _button;
 
+    /// <summary>
+    /// 変数の初期化
+    /// ボタンを無効状態にする
+    /// </summary>
     void Start()
     {
-        _image = GetComponent<Image>();
         _button = GetComponent<Button>();
         _button.interactable = false;
     }
 
+    /// <summary>
+    /// ボタンの有効無効を切り替えるメソッド
+    /// </summary>
+    /// <param name="flg">セットする値</param>
     public void SetActive(bool flg)
     {
-        //Color color = _image.color;
-        //color.a = flg ? 1 : 0.6f;
-        //_image.color = color;
         _button.interactable = flg;
     }
 }

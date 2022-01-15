@@ -10,6 +10,7 @@ namespace Vampire.Title
         [SerializeField] Button _startButton;
         [SerializeField] float _duration;
         [SerializeField] Ease _easeType;
+        [SerializeField] AudioClip _playSE;
         Tweener _tweener;
 
         /// <summary>
@@ -22,6 +23,7 @@ namespace Vampire.Title
                 .Subscribe(_ =>
                 {
                     SceneLoader.Instance.NextScene("Select");
+                    SEManager.Instance.PlayOneShot(_playSE);
                     _tweener.Kill();
                 })
                 .AddTo(this);

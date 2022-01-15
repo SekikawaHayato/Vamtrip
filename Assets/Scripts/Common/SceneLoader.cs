@@ -9,8 +9,8 @@ public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
     
     [SerializeField] Transform _maskImage; // 背景を切り抜くマスク画像
     [SerializeField] GameObject _parent; // シーン遷移時に利用するゲームオブジェクトの親
-    [SerializeField] float _maxScale; //マスクをスケールする最大値
-    [SerializeField] float _scaleTime;
+    [SerializeField] float _maxScale; // マスクをスケールする最大値
+    [SerializeField] float _scaleTime; // マスクのスケールを行う時間
 
     /// <summary>
     /// シナリオシーンでシーン切り替えを実行するメソッド

@@ -43,12 +43,17 @@ namespace Vampire.InGame
         /// </summary>
         public void GameClear()
         {
+            _gameState.Value = InGame.GameState.Clear;
             Scenario.ScenarioData.UpdateDegressOfProgress();
             SceneLoader.Instance.NextScene("Scenario");
         }
 
+        /// <summary>
+        /// ゲームオーバー処理を行うメソッド
+        /// </summary>
         public void GameOver()
         {
+            _gameState.Value = InGame.GameState.Clear;
             SceneLoader.Instance.NextScene("GameOver");
         }
     }

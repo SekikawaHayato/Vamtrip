@@ -8,7 +8,6 @@ namespace Vampire.Gimmick {
         Color _color;
         float _moveSpeed;
         float _timer;
-        bool _isFan = false;
         float _maxLife = 8.0f;
         float _life = 8.0f;
 
@@ -17,14 +16,6 @@ namespace Vampire.Gimmick {
         /// </summary>
         void Update()
         {
-            //if (_isFan)
-            //{
-            //    _color.a -= Time.deltaTime / 2.0f;
-            //    _sprite.color = _color;
-            //    if (_color.a < 0) Destroy();
-            //}
-            //else
-            //{ 
             transform.Translate(Vector3.left * _moveSpeed * Time.deltaTime);
             _timer -= Time.deltaTime;
             if (_timer <= 0)
@@ -32,7 +23,6 @@ namespace Vampire.Gimmick {
                 _moveSpeed *= -1;
                 _timer = Random.Range(3.0f, 5.0f);
             }
-            //}
         }
 
         /// <summary>

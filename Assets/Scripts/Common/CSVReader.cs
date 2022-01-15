@@ -6,7 +6,7 @@ using Vampire.Scenario;
 public class CSVReader
 {
     /// <summary>
-    /// CSVファイルのデータをリストにして取得するメソッド
+    /// 名前の情報を記録するCSVファイルのデータをリストにして取得するメソッド
     /// </summary>
     /// <param name="csvFile">読み込むCSVファイル</param>
     /// <returns>読み込んだデータのリスト</returns>
@@ -24,6 +24,11 @@ public class CSVReader
         return _csvDatas;
     }
 
+    /// <summary>
+    /// シナリオの情報を記録するCSVファイルのデータをリストにして取得するメソッド
+    /// </summary>
+    /// <param name="csvFile">読み込むCSVファイル</param>
+    /// <returns>読み込んだデータのリスト</returns>
     public static ScenarioInfo[] LoadScenario(TextAsset csvFile)
     {
         List<ScenarioInfo> csvDatas = new List<ScenarioInfo>();

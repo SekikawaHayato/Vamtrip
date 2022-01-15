@@ -1,7 +1,5 @@
 using UnityEngine;
 using UniRx;
-using UnityEngine.UI;
-using Vampire.InGame;
 
 namespace Vampire.Players{
     public sealed class PlayerMove : MonoBehaviour
@@ -47,6 +45,10 @@ namespace Vampire.Players{
             _rigidbody2D.velocity = moveVector * _defaultSpeed * GetMagnification();
         }
 
+        /// <summary>
+        /// スタミナを変更するメソッド
+        /// </summary>
+        /// <param name="flg">増やすかどうか</param>
         void StaminaChange(bool flg)
         {
             int index = flg ? 0 : 1;
@@ -60,6 +62,10 @@ namespace Vampire.Players{
             }
         }
 
+        /// <summary>
+        /// スタミナによる移動制限の値を取得するメソッド
+        /// </summary>
+        /// <returns>移動速度の倍率</returns>
         float GetMagnification()
         {
             if (_currentStamina == 0) return 0;

@@ -15,12 +15,14 @@ namespace Vampire.AI
         #region UniRx
         public IReadOnlyReactiveProperty<string> CommentText => _commentText;
         public IObservable<Unit> HitWind => _hitWind;
+        public IObservable<bool> HitGarlic => _hitGarlic;
         public IObservable<Unit> PutOn => _putOn;
         public IObservable<Unit> Damage => _damage;
 
         // イベントの発行に利用するSubject
         readonly ReactiveProperty<string> _commentText = new ReactiveProperty<string>();
         readonly Subject<Unit> _hitWind = new Subject<Unit>();
+        readonly Subject<bool> _hitGarlic = new Subject<bool>();
         readonly Subject<Unit> _putOn = new Subject<Unit>();
         readonly Subject<Unit> _damage = new Subject<Unit>();
         #endregion
@@ -80,6 +82,14 @@ namespace Vampire.AI
                     {
                         Garlic();
                     }
+                })
+                .AddTo(this);
+            this.OnTriggerExit2DAsObservable()
+                .Where(_ => _.gameObject.tag == "Garlic")
+                .Subscribe(_ =>
+                {
+                    _hitGarlic.OnNext(false);
+                    _state = AIState.Move;
                 })
                 .AddTo(this);
 
@@ -147,7 +157,8 @@ namespace Vampire.AI
 
         void Garlic()
         {
-
+            _state = AIState.Discomfort;
+            _hitGarlic.OnNext(true);
         }
 
         /// <summary>
@@ -190,6 +201,5 @@ namespace Vampire.AI
                 _allTargets.RemoveAt(index);
             }
         }
-
     }
 }

@@ -9,6 +9,7 @@ namespace Vampire.AI
     public class AIComment : MonoBehaviour
     {
         [SerializeField] Text _commentText;
+        [SerializeField] GameObject _commentWindow;
         [SerializeField] GameManager _gameManager;
         [SerializeField] float _displayTime;
         IAIProvider _aiProvider;
@@ -43,7 +44,8 @@ namespace Vampire.AI
                     _countTimer -= Time.deltaTime;
                     if (_countTimer < 0) DeleteText();
                 })
-                .AddTo(this);            
+                .AddTo(this);
+            _commentWindow.SetActive(false);
         }
 
         /// <summary>
@@ -52,8 +54,10 @@ namespace Vampire.AI
         /// <param name="text">表示するセリフ</param>
         void DisplayText(string text)
         {
+            
             _commentText.text = text;
             _countTimer = _displayTime;
+            _commentWindow.SetActive(true);
         }
 
         /// <summary>
@@ -61,6 +65,7 @@ namespace Vampire.AI
         /// </summary>
         void DeleteText()
         {
+            _commentWindow.SetActive(false);
             _commentText.text = string.Empty;
         }
     }

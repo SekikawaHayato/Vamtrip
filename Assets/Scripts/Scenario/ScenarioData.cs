@@ -18,16 +18,20 @@ namespace Vampire.Scenario
         ScenarioInfo[] _scenarios;
         Dictionary<string, string> _characterName;
 
+        /// <value>シナリオデータの配列</value>
         public ScenarioInfo[] Scenarios
         {
             get { return _scenarios; }
         }
 
+        /// <value>シナリオデータと対応する表示名の辞書</value>
         public Dictionary<string, string> CharacterName
         {
             get { return _characterName; }
         }
 
+        /// <value>選択した節のID
+        /// </value>
         public static int SelectSectionID
         {
             get { return _selectSectionID; }

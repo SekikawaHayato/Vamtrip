@@ -23,12 +23,7 @@ namespace Vampire.Scenario
             _isClickSubject.AddTo(this);
             this.UpdateAsObservable()
                 .Where(_ => Input.GetMouseButtonDown(0))
-//#if UNITY_EDITOR
-//                .Where(_ => !EventSystem.current.IsPointerOverGameObject())
-//#endif
-#if UNITY_IOS
                 .Where(_ => !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-#endif
                 .Subscribe(_ =>
                 {
                     _isClickSubject.OnNext(true);

@@ -664,9 +664,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenarioData:
     _scenarioTextAssets:
-    - {fileID: 4900000, guid: 02fe1cb05af0146208f023e5506cb35f, type: 3}
+    - {fileID: 4900000, guid: 8a8fec6b7115a41839d739655f7ddc91, type: 3}
     - {fileID: 4900000, guid: b2f62c1ede0e74621bc7c8f00bd8b4b7, type: 3}
-    - {fileID: 4900000, guid: 9159d66f0a4504bcbabe2c1e7c4dc6a6, type: 3}
+    - {fileID: 4900000, guid: 2ac96f303864e4fb296ccef2605c91c4, type: 3}
     _characterNameTextAssets: {fileID: 4900000, guid: 5a5718ade0cbd4d9585d9da65e84c8c9, type: 3}
 --- !u!114 &488093213
 MonoBehaviour:
@@ -2239,8 +2239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.5325}
-  m_SizeDelta: {x: -69.0215, y: -26.11}
+  m_AnchoredPosition: {x: 0, y: -3.2529}
+  m_SizeDelta: {x: -69.0215, y: -29.5508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308170940
 MonoBehaviour:
@@ -2945,7 +2945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.86, y: -32.33}
+  m_AnchoredPosition: {x: 66, y: -32}
   m_SizeDelta: {x: 22, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796660496
