@@ -31,7 +31,7 @@ namespace Vampire.Select
         /// </summary>
         void SelectSection()
         {
-            Scenario.ScenarioData.SetSectionID(_sectionID);
+            Scenario.ScenarioLoader.SetSectionID(_sectionID);
             SceneLoader.Instance.NextScene();
         }
     }

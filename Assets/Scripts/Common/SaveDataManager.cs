@@ -30,7 +30,7 @@ public class SaveDataManager : SingletonMonoBehaviour<SaveDataManager>
     /// </summary>
     public void SaveSolvedSection()
     {
-        int sectionID = Vampire.Scenario.ScenarioData.SelectSectionID;
+        int sectionID = Vampire.Scenario.ScenarioLoader.SelectSectionID;
         if (_saveData.solvedSection < sectionID)
         {
             _saveData.solvedSection = sectionID;

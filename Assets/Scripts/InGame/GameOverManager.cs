@@ -19,7 +19,7 @@ namespace Vampire.InGame
                 .Where(t => !_isSelected)
                 .Subscribe(t =>
                 {
-                    Scenario.ScenarioData.InitDegressOfProgress();
+                    Scenario.ScenarioLoader.InitDegressOfProgress();
                     SceneLoader.Instance.NextScene();
                     _isSelected = true;
                 })

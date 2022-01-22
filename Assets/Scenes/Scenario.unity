@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd574951db794b5695e0fe6fc52068a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenarioData:
+  _scenarioLoader:
     _scenarioTextAssets:
     - {fileID: 4900000, guid: 8a8fec6b7115a41839d739655f7ddc91, type: 3}
     - {fileID: 4900000, guid: b2f62c1ede0e74621bc7c8f00bd8b4b7, type: 3}

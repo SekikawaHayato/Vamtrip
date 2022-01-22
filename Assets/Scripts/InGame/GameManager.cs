@@ -44,7 +44,7 @@ namespace Vampire.InGame
         public void GameClear()
         {
             _gameState.Value = InGame.GameState.Clear;
-            Scenario.ScenarioData.UpdateDegressOfProgress();
+            Scenario.ScenarioLoader.UpdateDegressOfProgress();
             SceneLoader.Instance.NextScene("Scenario");
         }
 

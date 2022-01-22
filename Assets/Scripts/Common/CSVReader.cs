@@ -29,14 +29,14 @@ public class CSVReader
     /// </summary>
     /// <param name="csvFile">読み込むCSVファイル</param>
     /// <returns>読み込んだデータのリスト</returns>
-    public static ScenarioInfo[] LoadScenario(TextAsset csvFile)
+    public static ScenarioData[] LoadScenario(TextAsset csvFile)
     {
-        List<ScenarioInfo> csvDatas = new List<ScenarioInfo>();
+        List<ScenarioData> csvDatas = new List<ScenarioData>();
         StringReader reader = new StringReader(csvFile.text);
         while (reader.Peek() != -1)
         {
             string[] line = reader.ReadLine().Split(',');
-            csvDatas.Add(new ScenarioInfo(line));
+            csvDatas.Add(new ScenarioData(line));
         }
 
         return csvDatas.ToArray();

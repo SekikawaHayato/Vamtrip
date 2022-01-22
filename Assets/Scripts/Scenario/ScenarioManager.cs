@@ -24,7 +24,7 @@ namespace Vampire.Scenario
         readonly Subject<bool> _rinaActive = new Subject<bool>();
         readonly Subject<bool> _adolfActive = new Subject<bool>();
         #endregion
-        [SerializeField] ScenarioData _scenarioData;
+        [SerializeField] ScenarioLoader _scenarioLoader;
 
         // シナリオの進行を制御する変数
         int _currentStep = 0;
@@ -58,7 +58,7 @@ namespace Vampire.Scenario
         /// </summary>
         void Start()
         {
-            _scenarioData.LoadData();
+            _scenarioLoader.LoadData();
             _logData = new LogData();
 
             _backgroundChanger = GetComponent<BackgroundChanger>();
@@ -126,7 +126,7 @@ namespace Vampire.Scenario
                 _logData.AddMessage(_messageText.Value);
                 _isDisplayComplete = true;
             }
-            else if (_currentStep < _scenarioData.Scenarios.Length)
+            else if (_currentStep < _scenarioLoader.Scenarios.Length)
             {
                 SetNextStep();
             }
@@ -137,21 +137,21 @@ namespace Vampire.Scenario
         /// </summary>
         void SetNextStep()
         {
-            switch (_scenarioData.Scenarios[_currentStep].type)
+            switch (_scenarioLoader.Scenarios[_currentStep].type)
             {
                 case "Background": // 背景の変更
                     _isTransitionCpmplete = false;
-                    _backgroundChanger.ChangeBackground(_scenarioData.Scenarios[_currentStep].option, BackgroundCallBack);
+                    _backgroundChanger.ChangeBackground(_scenarioLoader.Scenarios[_currentStep].option, BackgroundCallBack);
                     _messageText.Value = null;
                     _nameText.OnNext(null);
                     break;
                 case "Words": // テキストを表示
-                    _currentText = _scenarioData.Scenarios[_currentStep].message;
-                    _nameText.OnNext(_scenarioData.CharacterName[_scenarioData.Scenarios[_currentStep].option]);
-                    _logData.AddName(_scenarioData.CharacterName[_scenarioData.Scenarios[_currentStep].option]);
-                    if (_scenarioData.Scenarios[_currentStep].rinaFace != "") _rinaFace.OnNext(_scenarioData.Scenarios[_currentStep].rinaFace);
-                    if (_scenarioData.Scenarios[_currentStep].adolfFace != "") _adolfFace.OnNext(_scenarioData.Scenarios[_currentStep].adolfFace);
-                    switch (_scenarioData.Scenarios[_currentStep].rinaActive)
+                    _currentText = _scenarioLoader.Scenarios[_currentStep].message;
+                    _nameText.OnNext(_scenarioLoader.CharacterName[_scenarioLoader.Scenarios[_currentStep].option]);
+                    _logData.AddName(_scenarioLoader.CharacterName[_scenarioLoader.Scenarios[_currentStep].option]);
+                    if (_scenarioLoader.Scenarios[_currentStep].rinaFace != "") _rinaFace.OnNext(_scenarioLoader.Scenarios[_currentStep].rinaFace);
+                    if (_scenarioLoader.Scenarios[_currentStep].adolfFace != "") _adolfFace.OnNext(_scenarioLoader.Scenarios[_currentStep].adolfFace);
+                    switch (_scenarioLoader.Scenarios[_currentStep].rinaActive)
                     {
                         case "Active":
                             _rinaActive.OnNext(true);
@@ -160,7 +160,7 @@ namespace Vampire.Scenario
                             _rinaActive.OnNext(false);
                             break;
                     }
-                    switch (_scenarioData.Scenarios[_currentStep].adolfActive)
+                    switch (_scenarioLoader.Scenarios[_currentStep].adolfActive)
                     {
                         case "Active":
                             _adolfActive.OnNext(true);
@@ -209,7 +209,7 @@ namespace Vampire.Scenario
         /// </summary>
         public void NextScene()
         {
-            SceneLoader.Instance.NextScene(_scenarioData.Scenarios[_scenarioData.Scenarios.Length - 1].option);
+            SceneLoader.Instance.NextScene(_scenarioLoader.Scenarios[_scenarioLoader.Scenarios.Length - 1].option);
         }
     }
 }
